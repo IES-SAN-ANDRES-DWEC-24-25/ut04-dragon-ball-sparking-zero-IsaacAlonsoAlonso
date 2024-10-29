@@ -1,12 +1,18 @@
 // src/Saiyan.js
 
+const Luchador = require("./Luchador");
 
-class Saiyan {
+
+class Saiyan extends Luchador{
+    constructor(){
+      super(nombre,velocidad,ataque,defensa,vida);
+    }
 
   /**
    * Transforma al Saiyan en Super Saiyan, aumentando sus atributos.
    */
   transformar() {
+
   }
 
   /**
