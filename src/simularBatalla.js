@@ -14,7 +14,13 @@ function simularBatalla(luchador1, luchador2) {
     // Determinar quién ataca primero basado en la velocidad
     
       // Si la velocidad es igual, elegir al azar
-      
+      if(luchador1.velocidad>luchador2.velocidad){
+
+      }else if(luchador1.velocidad==luchador2.velocidad){
+
+      }else{
+        
+      }
   
     console.log(`${atacante.nombre} tiene mayor velocidad y ataca primero.`);
   

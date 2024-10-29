@@ -2,7 +2,43 @@
 
 class Luchador {
     // Implementa el constructor y los métodos necesarios
-  
+        constructor(nombre,velocidad,ataque,defensa,vida){
+          this.nombre=nombre;
+          this.velocidad=velocidad;
+          this.ataque=ataque;
+          this.defensa=defensa;
+          this.vida=vida;
+        }
+        get nombre(){
+          return this.nombre;
+        }
+        set nombre(nombre){
+          this.nombre=nombre;
+        }
+        get ataque(){
+          return this.ataque;
+        }
+        set ataque(ataque){
+          this.ataque=ataque;
+        }
+        get velocidad(){
+          return this.velocidad;
+        }
+        set velocidad(velocidad){
+          this.velocidad=velocidad;
+        }
+        get defensa(){
+          return this.defensa;
+        }
+        set defensa(defensa){
+          this.defensa=defensa;
+        }
+        get vida(){
+          return this.vida;
+        }
+        set vida(vida){
+          this.vida=vida;
+        }
   
     /**
      * Realiza un ataque contra un oponente.
