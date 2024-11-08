@@ -47,18 +47,29 @@ class Luchador {
      */
     atacar(oponente) {
       // Decidir si el ataque es esquivado
-     
+      if(Math.random() > 0.7){
+        console.log(`${oponente.nombre} El oponente ha esquivado`);
+      }else{
+        console.log(`${oponente.nombre}  El ataque ha impactado`);
+        return calcDaño(this.ataque);
+      }
   
       // Calcular daño
-      
+      let danio=0;
+      if(this.ataque<oponente.defensa){
+        danio = this.ataque * 0.2;
+      }else{
+        danio= this.ataque - oponente.defensa;
+      }
   
       // Asegurar que el daño no sea negativo
-      
-  
       // Aplicar daño al oponente
-     
-  
+      if (danio>=0){
+        oponente.recibirDanio(danio);
+      }
+ 
       // Retornar resultado del ataque
+      
       
     }
   
@@ -67,15 +78,25 @@ class Luchador {
      * @param {number} danio - Cantidad de daño recibido.
      */
     recibirDanio(danio) {
-      
+      this.vida= vida-danio;
+
     }
   
     /**
      * Verifica si el luchador está vivo.
      * @returns {boolean} - `true` si la salud es mayor a 0, `false` en caso contrario.
      */
-    estaVivo() {
+    estaVivo(luchador) {
+      if(luchador.vida>0){
+        return true;
+      }else{
+        return false;
+      }
+    
      
+    }
+    reiniciarsalud(){
+      this.vida=100;
     }
   }
   
