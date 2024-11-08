@@ -6,12 +6,13 @@
  * @param {Luchador} luchador2 - Segundo luchador.
  * @returns {Luchador} - Ganador de la batalla.
  */
+const ganador=null;
 function simularBatalla(luchador1, luchador2) {
     console.log(`\nComienza la batalla entre ${luchador1.nombre} y ${luchador2.nombre}!`);
-  
-    let atacante;
-    let defensor;
     
+    let atacante = null;
+    let defensor =null;
+   
   
     // Determinar quién ataca primero basado en la velocidad
     
@@ -75,33 +76,35 @@ function simularBatalla(luchador1, luchador2) {
       }
       defensor.atacar(atacante);
     }
-    if(atacante.estaVivo()=true) {
-      if (atacante instanceof Saiyan) {
-        atacante.revertirTransformacion();
-      }
     
-      if (atacante instanceof Earthling ) {
-        atacante.anularTecnica();
-      }
-      ganador=atacante;
-    }else{
-      ganador=defensor;
-      if (defensor instanceof Saiyan) {
-        defensor.revertirTransformacion();
-      }
-    
-      if (defensor instanceof Earthling ) {
-        defensor.anularTecnica();
-      }
-    }
   }
-
+  if(atacante.estaVivo()=true) {
+    if (atacante instanceof Saiyan) {
+      atacante.revertirTransformacion();
+    }
+  
+    if (atacante instanceof Earthling ) {
+      atacante.anularTecnica();
+    }
+    ganador=atacante;
+  }else{
+    ganador=defensor;
+    if (defensor instanceof Saiyan) {
+      defensor.revertirTransformacion();
+    }
+  
+    if (defensor instanceof Earthling ) {
+      defensor.anularTecnica();
+    }
   
   
   
 }
 
-    const ganador = null;
+
+
+   
     console.log(`El ganador de la batalla es ${ganador.nombre}!\n`);
     return ganador;
+}
   module.exports = simularBatalla;

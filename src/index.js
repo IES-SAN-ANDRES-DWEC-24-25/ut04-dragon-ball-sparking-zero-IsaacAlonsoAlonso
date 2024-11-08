@@ -4,7 +4,6 @@ const Saiyan = require('./Saiyan');
 const Namekian = require('./Namekian');
 const Earthling = require('./Earthling');
 const Torneo = require('./Torneo');
-const Torneo = require('./Torneo');
 
 // Crear luchadores de prueba con diferentes razas
 const luchadores = [
