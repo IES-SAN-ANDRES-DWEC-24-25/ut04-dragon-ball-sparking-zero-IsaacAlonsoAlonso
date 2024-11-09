@@ -37,7 +37,7 @@ class Saiyan extends Luchador{
     this.revertirTransformacion();
   }
   recibirDanio(danio) {
-    this.vida= vida-danio;
+    this.vida= this.vida-danio;
 
   }
 }

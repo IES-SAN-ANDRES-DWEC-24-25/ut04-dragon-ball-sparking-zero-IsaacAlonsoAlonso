@@ -23,7 +23,7 @@ class Namekian extends Luchador{
     this.vida=100;
   }
   recibirDanio(danio) {
-    this.vida= vida-danio;
+    this.vida= this.vida-danio;
 
   }
 

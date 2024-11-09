@@ -16,7 +16,7 @@ class Earthling extends Luchador{
   usarTecnicaEspecial() {
     if(!this.aumentAtaque){
       this.aumentAtaque = true;
-      this.ataque = ataque*1.2;
+      this.ataque = this.ataque*1.2;
 
       console.log(`${this.nombre} aumenta su fuerza${this.ataque.toFixed(0)} unidades`);
     }
@@ -33,7 +33,7 @@ class Earthling extends Luchador{
     this.anularTecnica();
   }
   recibirDanio(danio) {
-    this.vida= vida-danio;
+    this.vida= this.vida-danio;
 
   }
 }

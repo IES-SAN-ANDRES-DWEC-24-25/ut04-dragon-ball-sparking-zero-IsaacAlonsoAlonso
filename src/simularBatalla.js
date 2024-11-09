@@ -1,4 +1,7 @@
 // src/simularBatalla.js
+const Saiyan = require('./Saiyan');
+const Namekian = require('./Namekian');
+const Earthling = require('./Earthling');
 
 /**
  * Simula una batalla entre dos luchadores.
@@ -6,7 +9,7 @@
  * @param {Luchador} luchador2 - Segundo luchador.
  * @returns {Luchador} - Ganador de la batalla.
  */
-const ganador=null;
+
 function simularBatalla(luchador1, luchador2) {
     console.log(`\nComienza la batalla entre ${luchador1.nombre} y ${luchador2.nombre}!`);
     
@@ -58,7 +61,7 @@ function simularBatalla(luchador1, luchador2) {
       }
     atacante.atacar(defensor);
     
-    if (defensor.estaVivo()) {
+    if (defensor.estaVivo()==true) {
       console.log(`\nEs el turno de ${defensor.nombre}.\n`);
 
       if (defensor instanceof Saiyan) {
@@ -78,29 +81,14 @@ function simularBatalla(luchador1, luchador2) {
     }
     
   }
-  if(atacante.estaVivo()=true) {
-    if (atacante instanceof Saiyan) {
-      atacante.revertirTransformacion();
-    }
-  
-    if (atacante instanceof Earthling ) {
-      atacante.anularTecnica();
-    }
-    ganador=atacante;
-  }else{
-    ganador=defensor;
-    if (defensor instanceof Saiyan) {
-      defensor.revertirTransformacion();
-    }
-  
-    if (defensor instanceof Earthling ) {
-      defensor.anularTecnica();
-    }
-  
-  
-  
+  const ganador = luchador1.salud > 0 ? luchador1 : luchador2;
+if (ganador instanceof Saiyan) {
+  ganador.revertirTransformacion();
 }
 
+if (ganador instanceof Earthling ) {
+  ganador.anularTecnica();
+}
 
 
    

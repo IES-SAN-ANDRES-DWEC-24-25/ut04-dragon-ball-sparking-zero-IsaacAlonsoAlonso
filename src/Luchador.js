@@ -9,35 +9,14 @@ class Luchador {
           this.defensa=defensa;
           this.vida=vida;
         }
-        get nombre(){
-          return this.nombre;
-        }
-        set nombre(nombre){
-          this.nombre=nombre;
-        }
-        get ataque(){
-          return this.ataque;
-        }
-        set ataque(ataque){
-          this.ataque=ataque;
-        }
-        get velocidad(){
-          return this.velocidad;
-        }
-        set velocidad(velocidad){
-          this.velocidad=velocidad;
-        }
-        get defensa(){
-          return this.defensa;
-        }
-        set defensa(defensa){
-          this.defensa=defensa;
-        }
-        get vida(){
-          return this.vida;
-        }
-        set vida(vida){
-          this.vida=vida;
+        setSalud(vida){
+
+          if(vida < 0){
+            this.vida = 0;
+          }else{
+            this.vida = vida;
+          }
+      
         }
   
     /**
@@ -51,7 +30,7 @@ class Luchador {
         console.log(`${oponente.nombre} El oponente ha esquivado`);
       }else{
         console.log(`${oponente.nombre}  El ataque ha impactado`);
-        return calcDaño(this.ataque);
+        oponente.recibirDanio(this.ataque);
       }
   
       // Calcular daño
@@ -78,7 +57,7 @@ class Luchador {
      * @param {number} danio - Cantidad de daño recibido.
      */
     recibirDanio(danio) {
-      this.vida= vida-danio;
+      this.setSalud(this.vida - danio);
 
     }
   
@@ -86,8 +65,8 @@ class Luchador {
      * Verifica si el luchador está vivo.
      * @returns {boolean} - `true` si la salud es mayor a 0, `false` en caso contrario.
      */
-    estaVivo(luchador) {
-      if(luchador.vida>0){
+    estaVivo() {
+      if(this.vida>0){
         return true;
       }else{
         return false;
